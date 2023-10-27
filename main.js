@@ -1,7 +1,7 @@
 const todoForm = document.querySelector("#form");
 const todoList = document.querySelector("#todos");
 const taskInput = document.querySelector("#input");
-let count = 0;
+
 
 // Function to check and render stored todos from localStorage
 function checkLocalStorage() {
@@ -16,30 +16,9 @@ function checkLocalStorage() {
         const todoItem = createTodoItem(task, taskId);
         todoList.appendChild(todoItem);
       });
-    } else {
-      // Handle the case when tasks is undefined or null
-      // For example, you can display a message or handle it in a different way
-      console.log("No tasks found in stored todos.");
-    }
-  } else {
-    // Handle the case when there are no todos stored in the local storage
-    // For example, you can display a message or handle it in a different way
-    console.log("No todos found in local storage.");
+    } 
   }
 }
-// function checkLocalStorage() {
-//   const storedTodos = localStorage.getItem("todos");
-//   if (storedTodos !== null) {
-//     const todos = JSON.parse(storedTodos);
-//     const task = todos.tasks;
-//     Object.entries(storedTodos.tasks).forEach(([taskId, task]) => {
-//       const todoItem = createTodoItem(task, taskId);
-//       todoList.appendChild(todoItem);
-//     });
-//   } else {
-//     const task = [];
-//   }
-// }
 
 checkLocalStorage();
 
